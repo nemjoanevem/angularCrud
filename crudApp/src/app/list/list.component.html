@@ -1,1 +1,18 @@
-<p>list works!</p>
+<table class="table">
+    <thead>
+        <th>Name</th>
+        <th>Status</th>
+        <th>Gender</th>
+        <th>Origin</th>
+        <th>Species</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of service.characters">
+        <td>{{data.name}}</td>
+        <td>{{data.status}}</td>
+        <td>{{data.gender}}</td>
+        <td>{{data.origin}}</td>
+        <td>{{data.species}}</td>
+    </tr>
+    </tbody>
+</table>
