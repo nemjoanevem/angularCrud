@@ -15,7 +15,6 @@ export class ListComponent implements OnInit {
 
   ngOnInit(): void {
     let fromStorage : any = JSON.parse(localStorage.getItem('data') || '{}') as Character;
-    console.log(fromStorage);
     for(const key in fromStorage){
       if (fromStorage.hasOwnProperty(key)){
         this.items.push(fromStorage[key]);
