@@ -1,4 +1,4 @@
-import { FetchService } from './../fetch.service';
+import { Character } from './../dataObj';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,18 +6,20 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.css']
 })
+
 export class ListComponent implements OnInit {
 
-  constructor(public service: FetchService ) { }
+  items = Array();
+
+  constructor() {}
 
   ngOnInit(): void {
-    if (this.service.characters.length === 0){
-      this.service.fetchCharacters().subscribe(
-        next => console.log("next"), /*(data: any)=> this.service.characters = data.results,*/
-        error => console.log("hiba"),
-        () => console.log("sikerült")
-        );
+    let fromStorage : any = JSON.parse(localStorage.getItem('data') || '{}') as Character;
+    console.log(fromStorage);
+    for(const key in fromStorage){
+      if (fromStorage.hasOwnProperty(key)){
+        this.items.push(fromStorage[key]);
+        }
     }
   }
-
 }
