@@ -1,3 +1,4 @@
+import { Character } from './../dataObj';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
