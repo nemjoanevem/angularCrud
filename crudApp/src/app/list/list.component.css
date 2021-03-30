@@ -2,7 +2,8 @@
     display: flex;
     flex-wrap: wrap;
     padding-left: 0;
-   }
+    padding-bottom: 5%;
+    padding-top: 2%;  }
    .card {
     margin: 20px;
     justify-content: space-around;
@@ -17,3 +18,12 @@
    .card__body, .card__footer, .card__header {
     padding: 15px;
    }
+   
+   .btn-success{
+       margin-right: 44%;
+   }
+
+   h3{
+       max-width: 270px;
+   }
+   
