@@ -10,9 +10,27 @@ import { Component, OnInit } from '@angular/core';
 export class ListComponent implements OnInit {
 
   items = Array();
+  tag : any = 0;
+  prevId : any = 0;
 
   constructor() {}
 
+  delete(id: any){
+
+    const index = this.items.indexOf(this.items.find(x=> x.id === id));
+    if (index != -1){
+      this.items.splice(index, 1);
+    }
+
+    localStorage.removeItem('data');
+
+    for (const key in this.items){
+      if (this.items.hasOwnProperty(key)){
+        localStorage.setItem("data", JSON.stringify(this.items))
+      }
+    }
+
+  }
   ngOnInit(): void {
     let fromStorage : any = JSON.parse(localStorage.getItem('data') || '{}') as Character;
     for(const key in fromStorage){
