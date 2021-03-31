@@ -14,7 +14,7 @@
           <h3>{{item.name}}</h3>
           <small>Status: {{item.status}}</small>
           <br>
-          <a routerLink = '../update' type="button" class="btn btn-success">Update</a>
+          <a routerLink = '../update' type="button" class="btn btn-success"  (click) = "storeUpdateElement(item.id)">Update</a>
           <button name="Delete" id= "{{item.id}}" type="button" class="btn btn-danger" (click) = "delete(item.id)"> Delete</button>
         </div>
       </div>
