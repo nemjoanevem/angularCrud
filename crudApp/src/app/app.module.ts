@@ -26,7 +26,8 @@ import { UpdateComponent } from './update/update.component';
       {path: "update", component: UpdateComponent}
     ])
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
