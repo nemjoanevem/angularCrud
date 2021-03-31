@@ -16,26 +16,12 @@ export class ListComponent implements OnInit {
   constructor() {}
 
   delete(id: any){
-
     const index = this.items.indexOf(this.items.find(x=> x.id === id));
     if (index != -1){
       this.items.splice(index, 1);
     }
-    
-
     this.saveItemsInLocalStorage();
-
   }
-
-
-  storeUpdateElement(id: any){
-    const index = this.items.indexOf(this.items.find(x=> x.id === id));
-    if (index != -1){
-        console.log(this.items[index]);
-        localStorage.setItem("updateElement", JSON.stringify(this.items[index]));
-    }
-  }
-
 
   ngOnInit(): void {
     let fromStorage : any = JSON.parse(localStorage.getItem('data') || '{}') as Character;
@@ -64,6 +50,15 @@ export class ListComponent implements OnInit {
     this.saveItemsInLocalStorage();
 
   }
+  
+  saveGivenElementInStorage(id: any, name : any){
+    const index = this.items.indexOf(this.items.find(x=> x.id === id));
+    if (index != -1){
+        console.log(this.items[index]);
+        localStorage.setItem(name, JSON.stringify(this.items[index]));
+    }
+  }
+
 
   saveItemsInLocalStorage(){
     for (const key in this.items){

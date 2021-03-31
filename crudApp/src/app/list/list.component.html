@@ -4,17 +4,17 @@
     <div *ngFor="let item of items" class="card">
       <div class="card shadow--tl">
         <div class="card__image">
-          <img
+          <a routerLink = '../view' (click) = "saveGivenElementInStorage(item.id, 'viewElement')"><img
             height="300px"
             src="{{item.img_url}}"
             alt="{{item.name}}"
-          />
+          /></a>
         </div>
         <div class="card__body">
           <h3>{{item.name}}</h3>
           <small>Status: {{item.status}}</small>
           <br>
-          <a routerLink = '../update' type="button" class="btn btn-success"  (click) = "storeUpdateElement(item.id)">Update</a>
+          <a routerLink = '../update' type="button" class="btn btn-success"  (click) = "saveGivenElementInStorage(item.id, 'updateElement')">Update</a>
           <button name="Delete" id= "{{item.id}}" type="button" class="btn btn-danger" (click) = "delete(item.id)"> Delete</button>
         </div>
       </div>
