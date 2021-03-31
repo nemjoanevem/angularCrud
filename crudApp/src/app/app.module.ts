@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { ListComponent } from './list/list.component';
 import { CreateComponent } from './create/create.component';
 import { UpdateComponent } from './update/update.component';
+import { CharacterViewComponent } from './character-view/character-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListComponent,
     CreateComponent,
-    UpdateComponent
+    UpdateComponent,
+    CharacterViewComponent
   ],
   imports: [
     BrowserModule,
