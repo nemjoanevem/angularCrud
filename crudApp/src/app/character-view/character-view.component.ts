@@ -1,3 +1,4 @@
+import { Character } from './../dataObj';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,6 +9,9 @@ import { Component, OnInit } from '@angular/core';
 export class CharacterViewComponent implements OnInit {
 
   constructor() { }
+
+  viewItem : any = JSON.parse(localStorage.getItem('viewElement') || '{}') as Character;
+
 
   ngOnInit(): void {
   }

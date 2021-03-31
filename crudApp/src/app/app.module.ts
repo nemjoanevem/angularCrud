@@ -25,7 +25,8 @@ import { CharacterViewComponent } from './character-view/character-view.componen
     RouterModule.forRoot([
       {path: "list", component: ListComponent},
       {path: "create", component: CreateComponent},
-      {path: "update", component: UpdateComponent}
+      {path: "update", component: UpdateComponent},
+      {path: "view", component: CharacterViewComponent}
     ])
   ],
   providers: [
