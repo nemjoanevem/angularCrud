@@ -10,3 +10,8 @@ export class Character{
     abalities: string;
     img_url: string;
 }
+
+export class user{
+    name: string;
+    password: string;
+}
