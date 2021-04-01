@@ -29,7 +29,11 @@ import { LoginComponent } from './login/login.component';
       {path: "create", component: CreateComponent},
       {path: "update", component: UpdateComponent},
       {path: "view", component: CharacterViewComponent},
-      {path: "login", component: LoginComponent}
+      {path: "login", component: LoginComponent},
+      {
+        path: '', redirectTo: '/login',
+        pathMatch: 'full'
+      }
 
     ])
   ],
