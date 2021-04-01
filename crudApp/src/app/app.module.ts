@@ -28,7 +28,9 @@ import { LoginComponent } from './login/login.component';
       {path: "list", component: ListComponent},
       {path: "create", component: CreateComponent},
       {path: "update", component: UpdateComponent},
-      {path: "view", component: CharacterViewComponent}
+      {path: "view", component: CharacterViewComponent},
+      {path: "login", component: LoginComponent}
+
     ])
   ],
   providers: [
