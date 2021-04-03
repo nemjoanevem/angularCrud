@@ -16,7 +16,6 @@ export class AuthGuard implements CanActivate {
       const user = JSON.parse(localStorage.getItem('currentUser') || '{}') as user;
 
       if(user.name === "admin" && user.password === "admin"){
-        console.log("hujujuj");
         return true
       }
       else{
