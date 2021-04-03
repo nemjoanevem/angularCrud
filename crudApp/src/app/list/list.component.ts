@@ -35,14 +35,14 @@ export class ListComponent implements OnInit {
     const updatedItemId: any = updatedItem.id;
 
     const index = this.items.indexOf(this.items.find(x=> x.id === updatedItemId));
-    if (index != -1){
+    if (index != -1 && this.isTwoItemEqual(this.items[index], updatedItem)){
       this.items[index] = updatedItem;
     }
 
     const newItem: any = JSON.parse(localStorage.getItem('newCharacter') || '{}') as Character;
     const newItemId: any = newItem.id;
     const i = this.items.indexOf(this.items.find(x=> x.id === newItemId));
-    if (i === -1){
+    if (i === -1 && newItemId != null){
       this.items.push(newItem);
     }
 
@@ -50,6 +50,13 @@ export class ListComponent implements OnInit {
     this.saveItemsInLocalStorage();
 
   }
+
+  isTwoItemEqual(firstItem: Character, secondItem : Character){
+    if(firstItem.name == secondItem.name && firstItem.origin == secondItem.origin && firstItem.status == secondItem.status && firstItem.species == secondItem.species){
+      return false;
+    }  
+    else return true;
+  } 
   
   saveGivenElementInStorage(id: any, name : any){
     const index = this.items.indexOf(this.items.find(x=> x.id === id));
