@@ -21,7 +21,7 @@ export class CreateComponent implements OnInit {
         }
     }
     
-    this.newCharacter.id === count+1;
+    this.newCharacter.id = count+1;
     this.newCharacter.name = (<HTMLInputElement>document.getElementById('name')).value;
     this.newCharacter.origin = (<HTMLInputElement>document.getElementById('origin')).value;
     this.newCharacter.gender = (<HTMLInputElement>document.getElementById('gender')).value;
