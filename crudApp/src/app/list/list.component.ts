@@ -24,12 +24,15 @@ export class ListComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    let count = 0;
     let fromStorage : any = JSON.parse(localStorage.getItem('data') || '{}') as Character;
     for(const key in fromStorage){
       if (fromStorage.hasOwnProperty(key)){
         this.items.push(fromStorage[key]);
         }
     }
+
+
 
     const updatedItem: any = JSON.parse(localStorage.getItem('updatedElement') || '{}') as Character;
     const updatedItemId: any = updatedItem.id;
@@ -46,7 +49,9 @@ export class ListComponent implements OnInit {
       this.items.push(newItem);
     }
 
+    this.saveGivenElementInStorage(this.items.length, "lastElement");
 
+    
     this.saveItemsInLocalStorage();
 
   }
@@ -61,7 +66,6 @@ export class ListComponent implements OnInit {
   saveGivenElementInStorage(id: any, name : any){
     const index = this.items.indexOf(this.items.find(x=> x.id === id));
     if (index != -1){
-        console.log(this.items[index]);
         localStorage.setItem(name, JSON.stringify(this.items[index]));
     }
   }
